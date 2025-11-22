@@ -68,7 +68,7 @@ jobs:
 
       # Stoppe Port 8080, falls noch belegt
       - name: Free port 8080
-        run: ssh -o StrictHostKeyChecking=no ubuntu@18.117.247.109 "fuser -k 8080/tcp || true"
+        run: ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} "fuser -k 8080/tcp || true"
 
       - name: Copy JAR to EC2
         run: scp -o StrictHostKeyChecking=no target/spring-petclinic-*.jar ubuntu@${{ secrets.EC2_HOST }}:/home/ubuntu/
@@ -79,5 +79,5 @@ jobs:
 
         # Starte die Spring Boot App
       - name: Start Spring Petclinic
-        run: ssh -o StrictHostKeyChecking=no ubuntu@18.117.247.109 \
+        run: ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} \
           "nohup java -jar spring-petclinic-*.jar --server.address=0.0.0.0 --server.port=8080 > ~/app.log 2>&1 &"
