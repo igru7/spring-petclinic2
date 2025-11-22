@@ -47,7 +47,7 @@ jobs:
             -Dsonar.host.url=http://$EC2_HOST:9000 \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.projectKey=spring-petclinic \
-            -Dsonar.projectName="Spring Petclinic"
+            -Dsonar.projectName="spring-petclinic"
 
       # 6️⃣ Optional: SSH auf EC2
       - name: Setup SSH Agent
