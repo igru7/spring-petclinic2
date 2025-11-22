@@ -79,5 +79,5 @@ jobs:
 
         # Starte die Spring Boot App
       - name: Start Spring Petclinic
-        run: ssh -o StrictHostKeyChecking=no ubuntu@18.117.247.109 "
-          nohup java -jar ~/target/spring-petclinic-*.jar > ~/app.log 2>&1 &"
+        run: ssh -o StrictHostKeyChecking=no ubuntu@18.117.247.109 \
+          "nohup java -jar ~/target/spring-petclinic-*.jar > ~/app.log 2>&1 &"
