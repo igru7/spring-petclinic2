@@ -45,7 +45,6 @@ jobs:
           name: spring-petclinic-jar
           path: target/spring-petclinic-*.jar
 
-jobs:
   deploy:
     runs-on: ubuntu-latest
 
