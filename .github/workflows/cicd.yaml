@@ -77,3 +77,5 @@ jobs:
       - name: Start Spring PetClinic
         run: ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} \
           "nohup java -jar /home/ubuntu/spring-petclinic-*.jar > /dev/null 2>&1 &"
+
+          
