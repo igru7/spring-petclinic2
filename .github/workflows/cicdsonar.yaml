@@ -37,5 +37,11 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Spring-petclinic -Dsonar.projectName='Spring-petclinic'
-        
+             
+      # This step is optional but shows how you might create an artifact to be used later 
+      - name: Archive production jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: spring-petclinic-jar
+          path: target/spring-petclinic-*.jar
  
