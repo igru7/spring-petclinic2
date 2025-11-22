@@ -21,11 +21,11 @@ jobs:
         uses: actions/checkout@v3
 
       # 2️⃣ Setup Java
-      - name: Setup Java 17
+      - name: Setup Java 25
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 25
 
       # 3️⃣ Cache Maven Dependencies
       - name: Cache Maven
