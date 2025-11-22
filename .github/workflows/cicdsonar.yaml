@@ -80,4 +80,4 @@ jobs:
         # Starte die Spring Boot App
       - name: Start Spring Petclinic
         run: ssh -o StrictHostKeyChecking=no ubuntu@18.117.247.109 \
-          "nohup java -jar ~/target/spring-petclinic-*.jar > ~/app.log 2>&1 &"
+          "nohup java -jar spring-petclinic-*.jar --server.address=0.0.0.0 --server.port=8080 > ~/app.log 2>&1 &"
